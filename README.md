@@ -7,7 +7,7 @@ The project provides users with a smooth shopping experience through product bro
 
 ## 🚀 Live Demo
 
-[View ShopEase Live Website]([YOUR-GITHUB-PAGES-URL](https://sameer8074.github.io/ShopEase-Ecommerce-Website/))
+[View ShopEase Live Website](https://sameer8074.github.io/ShopEase-Ecommerce-Website/)
 
 ## 📌 Features
 
