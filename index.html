@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase - E-Commerce Website</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+            ShopEase
+        </div>
+
+        <nav class="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="#products">Products</a>
+            <a href="#categories">Categories</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button
+                class="icon-button"
+                onclick="showSearch()"
+                type="button"
+            >
+                🔍
+            </button>
+
+            <button
+                id="wishlistIcon"
+                class="icon-button wishlist-header-button"
+                type="button"
+                onclick="showWishlist()"
+            >
+                ❤️
+                <span id="wishlistCount">
+                    0
+                </span>
+            </button>
+
+            <button
+                id="cartIcon"
+                class="cart-button"
+                type="button"
+            >
+                🛒
+                <span id="cartCount">
+                    0
+                </span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <!-- Hero background image -->
+        <div class="hero-image"></div>
+
+        <!-- Hero content -->
+        <div class="hero-content">
+
+            <p class="hero-small-text">
+                NEW COLLECTION 2026
+            </p>
+
+            <h1>
+                Discover Your
+                <span>Perfect Style</span>
+            </h1>
+
+            <p class="hero-description">
+                Shop the latest trends in fashion, electronics,
+                accessories and more.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#products" class="primary-button">
+                    Shop Now →
+                </a>
+
+                <a href="#categories" class="secondary-button">
+                    Explore Categories
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Categories -->
+    <section class="categories-section" id="categories">
+
+        <div class="section-heading">
+
+            <p>SHOP BY CATEGORY</p>
+
+            <h2>
+                Explore Our Categories
+            </h2>
+
+        </div>
+
+        <div class="categories">
+
+            <!-- Fashion -->
+            <button
+                type="button"
+                class="category-card"
+                onclick="selectCategory('fashion')"
+            >
+                <div class="category-icon">
+                    👕
+                </div>
+
+                <div class="category-content">
+                    <span class="category-number">01</span>
+
+                    <h3>Fashion</h3>
+
+                    <p>
+                        Latest clothing & styles
+                    </p>
+
+                    <span class="category-link">
+                        Shop Fashion →
+                    </span>
+                </div>
+            </button>
+
+
+            <!-- Electronics -->
+            <button
+                type="button"
+                class="category-card"
+                onclick="selectCategory('electronics')"
+            >
+                <div class="category-icon">
+                    💻
+                </div>
+
+                <div class="category-content">
+                    <span class="category-number">02</span>
+
+                    <h3>Electronics</h3>
+
+                    <p>
+                        Gadgets & technology
+                    </p>
+
+                    <span class="category-link">
+                        Shop Electronics →
+                    </span>
+                </div>
+            </button>
+
+
+            <!-- Footwear -->
+            <button
+                type="button"
+                class="category-card"
+                onclick="selectCategory('footwear')"
+            >
+                <div class="category-icon">
+                    👟
+                </div>
+
+                <div class="category-content">
+                    <span class="category-number">03</span>
+
+                    <h3>Footwear</h3>
+
+                    <p>
+                        Shoes for every occasion
+                    </p>
+
+                    <span class="category-link">
+                        Shop Footwear →
+                    </span>
+                </div>
+            </button>
+
+
+            <!-- Accessories -->
+            <button
+                type="button"
+                class="category-card"
+                onclick="selectCategory('accessories')"
+            >
+                <div class="category-icon">
+                    🎒
+                </div>
+
+                <div class="category-content">
+                    <span class="category-number">04</span>
+
+                    <h3>Accessories</h3>
+
+                    <p>
+                        Complete your look
+                    </p>
+
+                    <span class="category-link">
+                        Shop Accessories →
+                    </span>
+                </div>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Products -->
+    <section class="products-section" id="products">
+
+        <div class="section-heading">
+
+            <p>OUR PRODUCTS</p>
+
+            <h2>Featured Products</h2>
+
+            <p class="section-description">
+                Discover our handpicked selection of trending products.
+            </p>
+
+        </div>
+
+        <!-- Product Search and Filters -->
+        <div class="product-controls">
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="productSearch"
+                    placeholder="Search products..."
+                >
+
+            </div>
+
+
+            <div class="category-filter">
+
+                <label for="categoryFilter">
+                    Category:
+                </label>
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="fashion">
+                        Fashion
+                    </option>
+
+                    <option value="footwear">
+                        Footwear
+                    </option>
+
+                    <option value="electronics">
+                        Electronics
+                    </option>
+
+                    <option value="accessories">
+                        Accessories
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="products-grid">
+
+
+            <!-- Product 1 -->
+            <div
+                class="product-card"
+                data-category="fashion"
+                data-name="Premium Casual T-Shirt"
+                data-price="799"
+                data-old-price="999"
+                data-rating="5"
+                data-reviews="124"
+                data-description="A comfortable premium casual T-shirt made with soft, breathable fabric. Perfect for everyday wear."
+            >
+
+                <div
+                    class="product-image"
+                    onclick="openProductModal(this.closest('.product-card'))"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"
+                        alt="Premium Casual T-Shirt"
+                    >
+
+                    <span class="discount">
+                        -20%
+                    </span>
+
+                    <button class="wishlist-button">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Fashion
+                    </p>
+
+                    <h3
+                        onclick="openProductModal(this.closest('.product-card'))"
+                        class="clickable-product-name"
+                    >
+                        Premium Casual T-Shirt
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(124)</span>
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <div class="price-box">
+                            <span class="price">
+                                ₹799
+                            </span>
+
+                            <span class="old-price">
+                                ₹999
+                            </span>
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Premium Casual T-Shirt', 799)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 2 -->
+            <div
+                class="product-card"
+                data-category="footwear"
+                data-name="Classic Running Shoes"
+                data-price="1999"
+                data-old-price="2399"
+                data-rating="5"
+                data-reviews="98"
+                data-description="Comfortable and lightweight running shoes designed for everyday movement, workouts and casual wear."
+            >
+
+                <div
+                    class="product-image"
+                    onclick="openProductModal(this.closest('.product-card'))"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+                        alt="Classic Running Shoes"
+                    >
+
+                    <span class="discount">
+                        -15%
+                    </span>
+
+                    <button class="wishlist-button">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Footwear
+                    </p>
+
+                    <h3
+                        onclick="openProductModal(this.closest('.product-card'))"
+                        class="clickable-product-name"
+                    >
+                        Classic Running Shoes
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(98)</span>
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <div class="price-box">
+
+                            <span class="price">
+                                ₹1,999
+                            </span>
+
+                            <span class="old-price">
+                                ₹2,399
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Classic Running Shoes', 1999)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+            <div
+                class="product-card"
+                data-category="electronics"
+                data-name="Wireless Headphones"
+                data-price="2499"
+                data-old-price="3299"
+                data-rating="5"
+                data-reviews="215"
+                data-description="Wireless headphones with a comfortable design, immersive sound and long-lasting battery life."
+            >
+
+                <div
+                    class="product-image"
+                    onclick="openProductModal(this.closest('.product-card'))"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=80"
+                        alt="Wireless Headphones"
+                    >
+
+                    <span class="discount">
+                        -25%
+                    </span>
+
+                    <button class="wishlist-button">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Electronics
+                    </p>
+
+                    <h3
+                        onclick="openProductModal(this.closest('.product-card'))"
+                        class="clickable-product-name"
+                    >
+                        Wireless Headphones
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(215)</span>
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <div class="price-box">
+
+                            <span class="price">
+                                ₹2,499
+                            </span>
+
+                            <span class="old-price">
+                                ₹3,299
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Wireless Headphones', 2499)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 4 -->
+            <div
+                class="product-card"
+                data-category="accessories"
+                data-name="Everyday Backpack"
+                data-price="1299"
+                data-old-price="1499"
+                data-rating="5"
+                data-reviews="87"
+                data-description="A practical everyday backpack with a clean design, spacious storage and comfortable carrying."
+            >
+
+                <div
+                    class="product-image"
+                    onclick="openProductModal(this.closest('.product-card'))"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80"
+                        alt="Everyday Backpack"
+                    >
+
+                    <span class="discount">
+                        -10%
+                    </span>
+
+                    <button class="wishlist-button">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Accessories
+                    </p>
+
+                    <h3
+                        onclick="openProductModal(this.closest('.product-card'))"
+                        class="clickable-product-name"
+                    >
+                        Everyday Backpack
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(87)</span>
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <div class="price-box">
+
+                            <span class="price">
+                                ₹1,299
+                            </span>
+
+                            <span class="old-price">
+                                ₹1,499
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Everyday Backpack', 1299)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 5 -->
+            <div
+                class="product-card"
+                data-category="fashion"
+                data-name="Oversized Comfort Hoodie"
+                data-price="1399"
+                data-old-price="1999"
+                data-rating="5"
+                data-reviews="156"
+                data-description="A soft oversized hoodie designed for comfort and everyday style."
+            >
+
+                <div
+                    class="product-image"
+                    onclick="openProductModal(this.closest('.product-card'))"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80"
+                        alt="Oversized Hoodie"
+                    >
+
+                    <span class="discount">
+                        -30%
+                    </span>
+
+                    <button class="wishlist-button">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Fashion
+                    </p>
+
+                    <h3
+                        onclick="openProductModal(this.closest('.product-card'))"
+                        class="clickable-product-name"
+                    >
+                        Oversized Comfort Hoodie
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(156)</span>
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <div class="price-box">
+
+                            <span class="price">
+                                ₹1,399
+                            </span>
+
+                            <span class="old-price">
+                                ₹1,999
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Oversized Comfort Hoodie', 1399)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 6 -->
+            <div
+                class="product-card"
+                data-category="electronics"
+                data-name="Smart Fitness Watch"
+                data-price="3299"
+                data-old-price="3999"
+                data-rating="5"
+                data-reviews="189"
+                data-description="A modern fitness smartwatch for tracking activity, workouts and everyday health goals."
+            >
+
+                <div
+                    class="product-image"
+                    onclick="openProductModal(this.closest('.product-card'))"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80"
+                        alt="Smart Watch"
+                    >
+
+                    <span class="discount">
+                        -18%
+                    </span>
+
+                    <button class="wishlist-button">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Electronics
+                    </p>
+
+                    <h3
+                        onclick="openProductModal(this.closest('.product-card'))"
+                        class="clickable-product-name"
+                    >
+                        Smart Fitness Watch
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(189)</span>
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <div class="price-box">
+
+                            <span class="price">
+                                ₹3,299
+                            </span>
+
+                            <span class="old-price">
+                                ₹3,999
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Smart Fitness Watch', 3299)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 7 -->
+            <div
+                class="product-card"
+                data-category="footwear"
+                data-name="Everyday Casual Sneakers"
+                data-price="1799"
+                data-old-price="2199"
+                data-rating="4"
+                data-reviews="76"
+                data-description="Versatile casual sneakers designed for comfortable everyday walking and stylish outfits."
+            >
+
+                <div
+                    class="product-image"
+                    onclick="openProductModal(this.closest('.product-card'))"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=700&q=80"
+                        alt="Casual Sneakers"
+                    >
+
+                    <span class="discount">
+                        -20%
+                    </span>
+
+                    <button class="wishlist-button">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Footwear
+                    </p>
+
+                    <h3
+                        onclick="openProductModal(this.closest('.product-card'))"
+                        class="clickable-product-name"
+                    >
+                        Everyday Casual Sneakers
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐☆
+                        <span>(76)</span>
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <div class="price-box">
+
+                            <span class="price">
+                                ₹1,799
+                            </span>
+
+                            <span class="old-price">
+                                ₹2,199
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Everyday Casual Sneakers', 1799)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 8 -->
+            <div
+                class="product-card"
+                data-category="accessories"
+                data-name="Premium Leather Handbag"
+                data-price="2799"
+                data-old-price="3199"
+                data-rating="5"
+                data-reviews="112"
+                data-description="A stylish premium handbag with a sophisticated design suitable for everyday and special occasions."
+            >
+
+                <div
+                    class="product-image"
+                    onclick="openProductModal(this.closest('.product-card'))"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80"
+                        alt="Leather Handbag"
+                    >
+
+                    <span class="discount">
+                        -12%
+                    </span>
+
+                    <button class="wishlist-button">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Accessories
+                    </p>
+
+                    <h3
+                        onclick="openProductModal(this.closest('.product-card'))"
+                        class="clickable-product-name"
+                    >
+                        Premium Leather Handbag
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(112)</span>
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <div class="price-box">
+
+                            <span class="price">
+                                ₹2,799
+                            </span>
+
+                            <span class="old-price">
+                                ₹3,199
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Premium Leather Handbag', 2799)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+
+        <div class="section-heading">
+
+            <p>GET IN TOUCH</p>
+
+            <h2>
+                Contact Us
+            </h2>
+
+        </div>
+
+        <div class="contact-box">
+
+            <p>
+                📧 Email: support@shopease.com
+            </p>
+
+            <p>
+                📞 Phone: +91 98765 43210
+            </p>
+
+            <p>
+                📍 Location: Mumbai, India
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="logo">
+            ShopEase
+        </div>
+
+        <p>
+            © 2026 ShopEase. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+        PRODUCT DETAILS MODAL
+    ========================= -->
+
+    <div id="productModal" class="product-modal">
+
+        <div class="product-modal-content">
+
+            <!-- Close button -->
+            <button
+                class="modal-close"
+                onclick="closeProductModal()"
+                aria-label="Close product details"
+            >
+                ×
+            </button>
+
+
+            <!-- Product image -->
+            <div class="modal-product-image">
+
+                <img
+                    id="modalProductImage"
+                    src=""
+                    alt="Product"
+                >
+
+            </div>
+
+
+            <!-- Product information -->
+            <div class="modal-product-info">
+
+                <p
+                    id="modalProductCategory"
+                    class="product-category"
+                >
+                    FASHION
+                </p>
+
+
+                <h2 id="modalProductName">
+                    Product Name
+                </h2>
+
+
+                <div
+                    id="modalProductRating"
+                    class="modal-rating"
+                >
+                    ⭐⭐⭐⭐⭐
+                    <span>(0)</span>
+                </div>
+
+
+                <div class="modal-price-box">
+
+                    <span
+                        id="modalProductPrice"
+                        class="modal-price"
+                    >
+                        ₹0
+                    </span>
+
+                    <span
+                        id="modalProductOldPrice"
+                        class="modal-old-price"
+                    >
+                        ₹0
+                    </span>
+
+                </div>
+
+
+                <p
+                    id="modalProductDescription"
+                    class="modal-description"
+                >
+                    Product description.
+                </p>
+
+
+                <!-- Quantity -->
+                <div class="quantity-section">
+
+                    <span>
+                        Quantity
+                    </span>
+
+                    <div class="quantity-control">
+
+                        <button
+                            onclick="decreaseQuantity()"
+                        >
+                            −
+                        </button>
+
+                        <span id="productQuantity">
+                            1
+                        </span>
+
+                        <button
+                            onclick="increaseQuantity()"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Wishlist -->
+                <button
+                    id="modalWishlistButton"
+                    class="modal-wishlist-button"
+                    type="button"
+                    aria-label="Add to wishlist"
+                >
+                    ♡ <span>Add to Wishlist</span>
+                </button>
+
+
+                <!-- Buttons -->
+                <div class="modal-buttons">
+
+                    <button
+                        id="modalAddToCart"
+                        class="modal-add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                    <button
+                        id="modalBuyNow"
+                        class="modal-buy-now"
+                    >
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+        SHOPPING CART
+    ========================= -->
+
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <aside id="cartPanel" class="cart-panel">
+
+        <!-- Cart Header -->
+
+        <div class="cart-header">
+
+            <div>
+                <h2>Shopping Cart</h2>
+
+                <p id="cartItemCount">
+                    0 items
+                </p>
+            </div>
+
+
+            <button
+                id="closeCart"
+                class="cart-close"
+                aria-label="Close shopping cart"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- Cart Items -->
+
+        <div
+            id="cartItems"
+            class="cart-items"
+        >
+
+            <div class="empty-cart">
+
+                <div class="empty-cart-icon">
+                    🛒
+                </div>
+
+                <h3>Your cart is empty</h3>
+
+                <p>
+                    Add some products to get started.
+                </p>
+
+                <button
+                    id="startShopping"
+                    class="start-shopping-btn"
+                >
+                    Start Shopping
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Cart Summary -->
+
+        <div class="cart-summary">
+
+            <div class="summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <span id="cartSubtotal">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Shipping
+                </span>
+
+                <span id="cartShipping">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <div class="summary-row total-row">
+
+                <strong>
+                    Total
+                </strong>
+
+                <strong id="cartTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <button
+                id="checkoutButton"
+                class="checkout-btn"
+            >
+                Proceed to Checkout
+            </button>
+
+
+            <button
+                id="clearCartButton"
+                class="clear-cart-btn"
+            >
+                Clear Cart
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="checkout-modal">
+
+        <div class="checkout-content">
+
+            <!-- Checkout Header -->
+            <div class="checkout-header">
+                <div>
+                    <p class="checkout-small-title">SHOP WITH CONFIDENCE</p>
+                    <h2>Checkout</h2>
+                </div>
+
+                <button
+                    id="closeCheckout"
+                    class="checkout-close"
+                    type="button"
+                    aria-label="Close checkout"
+                >
+                    ×
+                </button>
+            </div>
+
+            <!-- Checkout Body -->
+            <div class="checkout-body">
+
+                <!-- Customer Information -->
+                <div class="checkout-form-section">
+
+                    <h3>Customer Information</h3>
+
+                    <div class="checkout-form-grid">
+
+                        <div class="form-group">
+                            <label for="checkoutName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="checkoutName"
+                                placeholder="Enter your full name"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkoutEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="checkoutEmail"
+                                placeholder="Enter your email"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkoutPhone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="checkoutPhone"
+                                placeholder="Enter your phone number"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkoutCity">
+                                City
+                            </label>
+
+                            <input
+                                type="text"
+                                id="checkoutCity"
+                                placeholder="Enter your city"
+                            >
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="checkoutAddress">
+                                Delivery Address
+                            </label>
+
+                            <textarea
+                                id="checkoutAddress"
+                                rows="3"
+                                placeholder="Enter your complete delivery address"
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkoutState">
+                                State
+                            </label>
+
+                            <input
+                                type="text"
+                                id="checkoutState"
+                                placeholder="Enter your state"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkoutPincode">
+                                PIN Code
+                            </label>
+
+                            <input
+                                type="text"
+                                id="checkoutPincode"
+                                placeholder="Enter PIN code"
+                            >
+                        </div>
+
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="payment-section">
+
+                        <h3>Payment Method</h3>
+
+                        <div class="payment-options">
+
+                            <label class="payment-option">
+                                <input
+                                    type="radio"
+                                    name="paymentMethod"
+                                    value="cod"
+                                    checked
+                                >
+
+                                <span class="payment-option-content">
+                                    <span class="payment-icon">💵</span>
+
+                                    <span>
+                                        <strong>Cash on Delivery</strong>
+                                        <small>Pay when your order arrives</small>
+                                    </span>
+                                </span>
+                            </label>
+
+                            <label class="payment-option">
+                                <input
+                                    type="radio"
+                                    name="paymentMethod"
+                                    value="upi"
+                                >
+
+                                <span class="payment-option-content">
+                                    <span class="payment-icon">📱</span>
+
+                                    <span>
+                                        <strong>UPI</strong>
+                                        <small>Pay using your UPI app</small>
+                                    </span>
+                                </span>
+                            </label>
+
+                            <label class="payment-option">
+                                <input
+                                    type="radio"
+                                    name="paymentMethod"
+                                    value="card"
+                                >
+
+                                <span class="payment-option-content">
+                                    <span class="payment-icon">💳</span>
+
+                                    <span>
+                                        <strong>Credit / Debit Card</strong>
+                                        <small>Pay securely with your card</small>
+                                    </span>
+                                </span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Order Summary -->
+                <div class="checkout-summary-section">
+
+                    <h3>Order Summary</h3>
+
+                    <div id="checkoutItems" class="checkout-items">
+                        <!-- Products will appear here using JavaScript -->
+                    </div>
+
+                    <div class="checkout-summary-details">
+
+                        <div class="checkout-summary-row">
+                            <span>Subtotal</span>
+                            <span id="checkoutSubtotal">₹0</span>
+                        </div>
+
+                        <div class="checkout-summary-row">
+                            <span>Shipping</span>
+                            <span id="checkoutShipping">₹0</span>
+                        </div>
+
+                        <div class="checkout-summary-row checkout-total-row">
+                            <strong>Total</strong>
+                            <strong id="checkoutTotal">₹0</strong>
+                        </div>
+
+                    </div>
+
+                    <button
+                        id="placeOrderButton"
+                        class="place-order-btn"
+                        type="button"
+                    >
+                        Place Order
+                    </button>
+
+                    <p class="checkout-security">
+                        🔒 Your information is secure and protected.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Order Success Modal -->
+    <div id="orderSuccessModal" class="order-success-modal">
+
+        <div class="order-success-content">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <p class="success-small-title">
+                ORDER CONFIRMED
+            </p>
+
+            <h2>Thank You!</h2>
+
+            <p class="success-message">
+                Your order has been placed successfully.
+            </p>
+
+            <div class="order-number-box">
+                <span>Order Number</span>
+                <strong id="orderNumber">
+                    #SE000000
+                </strong>
+            </div>
+
+            <p class="success-delivery-message">
+                We will process your order and keep you updated
+                about the delivery.
+            </p>
+
+            <button
+                id="continueShoppingButton"
+                class="continue-shopping-btn"
+                type="button"
+            >
+                Continue Shopping
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================================
+        WISHLIST
+        ========================================================= -->
+
+    <div
+        id="wishlistOverlay"
+        class="wishlist-overlay"
+        onclick="closeWishlist()"
+    ></div>
+
+    <aside
+        id="wishlistPanel"
+        class="wishlist-panel"
+        aria-label="Wishlist"
+    >
+
+        <!-- Wishlist Header -->
+        <div class="wishlist-header">
+
+            <div>
+                <h2>My Wishlist</h2>
+
+                <p id="wishlistItemCount">
+                    0 items
+                </p>
+            </div>
+
+            <button
+                class="wishlist-close"
+                type="button"
+                onclick="closeWishlist()"
+                aria-label="Close wishlist"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- Wishlist Items -->
+        <div
+            id="wishlistItems"
+            class="wishlist-items"
+        >
+
+            <!-- Wishlist items will be added here by JavaScript -->
+
+        </div>
+
+    </aside>
+
+     <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
